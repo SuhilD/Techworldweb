@@ -20,7 +20,8 @@
         "../scss/_login.scss",
         "../scss/_blog.scss",
         "../scss/_blog-details.scss",
-        "../scss/_404.scss"
+        "../scss/_404.scss",
+        "../scss/_custom.scss"
     ],
     "names": [],
     "file": "ud-styles.css"
