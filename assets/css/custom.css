@@ -40,7 +40,7 @@
     .hero-title{
         font-size: 22px;
     }
-    .carousel,.carousel-item.carousel-inner{
+    .carousel .carousel-item .carousel-inner{
         height: 500px;
     }
    
