@@ -33,3 +33,22 @@
     color:white;
 
 }
+@media(max-width:756px){
+    .carousel-caption {
+        width:300px;
+    }
+    .hero-title{
+        font-size: 22px;
+    }
+    .carousel{
+        height: 500px;
+    }
+    .carousel-item {
+        height:500px;
+    }
+    .carousel-inner{
+        height:500px;
+    }
+
+
+}
