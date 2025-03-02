@@ -1300,8 +1300,9 @@ p {
 
 /* ===== Contact CSS ===== */
 .ud-contact {
-  padding: 120px 0px;
+  padding:0px 0px;
   position: relative;
+  background-color: white;
 }
 
 @media (max-width: 767px) {
@@ -1328,7 +1329,7 @@ p {
 }
 
 .ud-contact-title {
-  margin-bottom: 150px;
+  margin-bottom: 60px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
@@ -1356,9 +1357,11 @@ p {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      margin-top: 120px;
+      margin-bottom: 90px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {

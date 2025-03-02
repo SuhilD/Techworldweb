@@ -50,3 +50,48 @@
 
 
 }
+
+/* contact page  */
+.form-margintop{
+  margin-top: -22%;
+}
+.contact-heading{
+  margin-top:20px;
+}
+.contact--icons {
+ padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--primary-color);
+  font-size: 32px;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 40px;
+  color:white;
+}
+.contact--icons i{
+  color:white;
+}
+.contact--icons::after {
+  color:white;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 14px;
+  background: var(--primary-color);
+  opacity: 0.2;
+  z-index: -1;
+  transform: rotate(23deg);
+  transition: all 0.3s ease-out;
+}
+
+.ud-single-info:hover .contact--icons::after {
+  transform: rotate(43deg);
+}
