@@ -95,3 +95,10 @@
 .ud-single-info:hover .contact--icons::after {
   transform: rotate(43deg);
 }
+
+
+/* footer */
+
+.privacy-policy{
+  justify-content: end;
+}
