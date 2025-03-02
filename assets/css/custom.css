@@ -102,3 +102,38 @@
 .privacy-policy{
   justify-content: end;
 }
+.service-container{
+  max-width: 1200px;
+  margin: auto;
+}
+/* service page */
+.service-card  {
+  border-radius: 14px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.service-card ::after {
+  
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: 0;
+  transition: right 0.3s ease;
+}
+
+.service-card:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: linear-gradient(to bottom left,rgba(21, 77, 217, 0.206), transparent);
+}
+.service-card-list{
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 30px;
+  margin-top:20px;
+}
