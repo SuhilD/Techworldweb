@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play | Open source Project by UIdeck</title>
+    <title>Contact Us - Tech World Web</title>
 
     <!--====== Favicon Icon ======-->
     <link
@@ -18,7 +18,40 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/lineicons.css" />
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Additional styles for offcanvas fix -->
+    <style>
+      /* Fix for offcanvas menu */
+      .offcanvas {
+        position: fixed !important;
+        top: 0 !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+      }
+      
+      /* Ensure offcanvas is always visible when shown */
+      .offcanvas.show {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+      }
+      
+      /* Fix for sticky navbar and offcanvas interaction */
+      .ud-header.sticky ~ .offcanvas,
+      .ud-header.sticky + .offcanvas {
+        top: 0 !important;
+      }
+      
+      /* Ensure offcanvas backdrop covers the entire viewport */
+      .offcanvas-backdrop {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9998 !important;
+      }
+    </style>
   </head>
   <body>
     <!-- ====== Header Start ====== -->
@@ -28,37 +61,72 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo">Tech world web</span>
+                <span class="fw-bold text-white startup-logo">TECH WORLD WEB</span>
               </a>
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
               </button>
 
-              <div class="navbar-collapse">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header single-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
+                  <button type="button" class="custom-close-btn" style="display: flex;" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="lni lni-close"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="active" href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div class="offcanvas-btn mt-4">
+                    <a class="ud-main-btn ud-login-btn" href="contact.html">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Menu - Hidden on Mobile -->
+              <div class="desktop-menu d-none d-lg-flex align-items-center">
                 <ul id="nav" class="navbar-nav mx-auto">
                   <li class="nav-item">
-                    <a  href="/index.html">Home</a>
+                    <a href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/service.html">Services</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/blog.html">Blogs</a>
+                    <a href="blog.html">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/about.html">About Us</a>
+                    <a href="about.html">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/contact.html">Contact Us</a>
+                    <a class="active" href="contact.html">Contact Us</a>
                   </li>                   
                 </ul>
-              </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <a class="ud-main-btn ud-white-btn" href="contact.html">
-                  Get In Touch
-                </a>
+                <div class="navbar-btn">
+                  <a class="ud-main-btn ud-white-btn" href="contact.html">
+                    Get In Touch
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -73,7 +141,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="ud-banner-content">
-              <h1>Contact Page</h1>
+              <h1>Contact Tech World Web</h1>
+              <p>Let's discuss how we can help your business grow</p>
             </div>
           </div>
         </div>
@@ -103,15 +172,15 @@
       data-wow-delay=".2s"
       style="padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);"
     >
-      <h3 class="ud-contact-form-title">Send us a Message</h3>
+      <h3 class="ud-contact-form-title">Get in Touch With Us</h3>
+      <p class="mb-4">Tell us about your project and how we can help. Our team will respond promptly to discuss your needs.</p>
       <form class="ud-contact-form">
         <div class="ud-form-group">
           <label for="fullName">Full Name*</label>
           <input
             type="text"
             name="fullName"
-            placeholder="Adam Gelius"
-            style="font-size: 16px; padding: 12px;"
+            placeholder="Your Name"
           />
         </div>
         <div class="ud-form-group">
@@ -119,8 +188,7 @@
           <input
             type="email"
             name="email"
-            placeholder="example@yourmail.com"
-            style="font-size: 16px; padding: 12px;"
+            placeholder="example@yourdomain.com"
           />
         </div>
         <div class="ud-form-group">
@@ -128,17 +196,28 @@
           <input
             type="text"
             name="phone"
-            placeholder="+885 1254 5211 552"
-            style="font-size: 16px; padding: 12px;"
+            placeholder="+1 (123) 456-7890"
           />
+        </div>
+        <div class="ud-form-group">
+          <label for="service">Service of Interest</label>
+          <select name="service" class="form-select">
+            <option value="" selected disabled>Select a Service</option>
+            <option value="web-development">Web Development</option>
+            <option value="ui-ux-design">UI/UX Design</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="seo-services">SEO Services</option>
+            <option value="branding">Branding</option>
+            <option value="digital-marketing">Digital Marketing</option>
+            <option value="other">Other</option>
+          </select>
         </div>
         <div class="ud-form-group">
           <label for="message">Message*</label>
           <textarea
             name="message"
             rows="3"
-            placeholder="Type your message here"
-            style="font-size: 16px; padding: 12px;"
+            placeholder="Tell us about your project requirements"
           ></textarea>
         </div>
         <div class="ud-form-group mb-0">
@@ -152,16 +231,51 @@
   <div class="col-xl-6 col-lg-5">
     <div class="ud-contact-content-wrapper">
       <div class="ud-contact-title contact-heading ">
-        <span>CONTACT US</span>
+        <span>CONTACT INFO</span>
         <h2>
-          Let’s talk about <br />
-          Love to hear from you!
+          Let's Connect
         </h2>
       </div>
     
       <!-- Added Google Maps iframe for Coimbatore -->
       <div class="ud-single-info mt-4">
-       
+        <div class="ud-info-icon contact--icons">
+          <i class="lni lni-map-marker"></i>
+        </div>
+        <div class="ud-info-meta">
+          <h5>Our Location</h5>
+          <p>123 Tech Park, Innovation Street, Coimbatore, Tamil Nadu, India</p>
+        </div>
+      </div>
+      <div class="ud-single-info">
+        <div class="ud-info-icon contact--icons">
+          <i class="lni lni-envelope"></i>
+        </div>
+        <div class="ud-info-meta">
+          <h5>How Can We Help?</h5>
+          <p>info@techworldweb.com</p>
+          <p>support@techworldweb.com</p>
+        </div>
+      </div>
+      <div class="ud-single-info">
+        <div class="ud-info-icon contact--icons">
+          <i class="lni lni-phone"></i>
+        </div>
+        <div class="ud-info-meta">
+          <h5>Call Us</h5>
+          <p>+91 123 456 7890</p>
+          <p>+91 987 654 3210</p>
+        </div>
+      </div>
+      <div class="ud-single-info">
+        <div class="ud-info-icon contact--icons">
+          <i class="lni lni-timer"></i>
+        </div>
+        <div class="ud-info-meta">
+          <h5>Business Hours</h5>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 2:00 PM</p>
+        </div>
       </div>
     </div>
   </div>
@@ -448,5 +562,48 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/offcanvas-fix.js"></script>
+    <script>
+      // Handle offcanvas behavior with sticky navbar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the offcanvas element
+        const offcanvasNavbar = document.getElementById('offcanvasNavbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // Add event listener for when offcanvas is shown
+        if (offcanvasNavbar) {
+          offcanvasNavbar.addEventListener('show.bs.offcanvas', function () {
+            document.body.classList.add('offcanvas-open');
+          });
+          
+          // Add event listener for when offcanvas is hidden
+          offcanvasNavbar.addEventListener('hide.bs.offcanvas', function () {
+            document.body.classList.remove('offcanvas-open');
+          });
+          
+          // Toggle active class on navbar toggler
+          navbarToggler.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        }
+        
+        // Fix for offcanvas position when navbar is sticky
+        const header = document.querySelector('.ud-header');
+        if (header) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.attributeName === 'class') {
+                const isSticky = header.classList.contains('sticky');
+                if (isSticky && offcanvasNavbar) {
+                  offcanvasNavbar.style.top = '0';
+                }
+              }
+            });
+          });
+          
+          observer.observe(header, { attributes: true });
+        }
+      });
+    </script>
   </body>
 </html>

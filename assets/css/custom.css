@@ -7,12 +7,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
     color: white; 
     font-weight: bold;
-    margin-top: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    width:700px;
+    width: 80%;
+    max-width: 700px;
+    padding: 20px;
 }
 
   
@@ -25,20 +25,43 @@
     height: 100%;
     object-fit: cover;
 }
-.hero-title{
-    color:white;
-    margin-bottom: 15px;
-}
-.hero-description{
-    color:white;
 
+.hero-title{
+    color: white;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
 }
-@media(max-width:756px){
+
+.hero-description{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.carousel-btn {
+    margin-top: 20px;
+}
+
+@media(max-width: 992px){
     .carousel-caption {
-        width:300px;
+        width: 90%;
     }
     .hero-title{
-        font-size: 22px;
+        font-size: 2rem;
+    }
+    .hero-description{
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 768px){
+    .carousel-caption {
+        width: 90%;
+    }
+    .hero-title{
+        font-size: 1.8rem;
+    }
+    .hero-description{
+        font-size: 1rem;
     }
     .carousel-inner{
         height: 500px !important;
@@ -46,20 +69,54 @@
     .carousel-item{
         height: 500px !important;
     }
-   
+}
 
-
+@media(max-width: 576px){
+    .carousel-caption {
+        width: 95%;
+    }
+    .hero-title{
+        font-size: 1.5rem;
+    }
+    .hero-description{
+        font-size: 0.9rem;
+    }
+    .carousel-inner{
+        height: 400px !important;
+    }
+    .carousel-item{
+        height: 400px !important;
+    }
+    .carousel-btn .ud-main-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
 }
 
 /* contact page  */
 .form-margintop{
-  margin-top: -22%;
+  margin-top: -150px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+  z-index: 10;
 }
+
+@media(max-width: 768px){
+  .form-margintop{
+    margin-top: -50px;
+    padding: 20px;
+  }
+}
+
 .contact-heading{
-  margin-top:20px;
+  margin-top: 20px;
 }
+
 .contact--icons {
- padding: 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,13 +128,15 @@
   z-index: 1;
   text-align: center;
   margin-bottom: 40px;
-  color:white;
+  color: white;
 }
+
 .contact--icons i{
-  color:white;
+  color: white;
 }
+
 .contact--icons::after {
-  color:white;
+  color: white;
   content: "";
   position: absolute;
   width: 100%;
@@ -98,42 +157,416 @@
 
 
 /* footer */
-
 .privacy-policy{
-  justify-content: end;
+  justify-content: flex-end;
 }
+
+@media(max-width: 768px){
+  .privacy-policy{
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+}
+
 .service-container{
   max-width: 1200px;
   margin: auto;
 }
+
 /* service page */
-.service-card  {
+.service-card {
   border-radius: 14px;
   background: white;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.service-card ::after {
-  
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -100%;
-  bottom: 0;
-  left: 0;
-  transition: right 0.3s ease;
+  height: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
 }
 
 .service-card:hover{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background: linear-gradient(to bottom left,rgba(21, 77, 217, 0.206), transparent);
+  background: linear-gradient(to bottom left, rgba(21, 77, 217, 0.1), transparent);
+  transform: translateY(-5px);
 }
+
 .service-card-list{
   list-style-type: disc;
   text-align: left;
   margin-left: 30px;
-  margin-top:20px;
+  margin-top: 20px;
+}
+
+/* Navbar improvements */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler .toggler-icon {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  display: block;
+  margin: 6px 0;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+}
+
+/* Offcanvas Menu Styles */
+.offcanvas {
+  width: 300px;
+  background-color: white;
+  z-index: 9999;
+  position: fixed;
+  top: 0 !important;
+  height: 100vh !important;
+  transition: transform 0.3s ease-in-out, top 0s linear !important;
+}
+
+/* Fix for offcanvas visibility when header is sticky */
+.ud-header.sticky .offcanvas {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.offcanvas-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offcanvas-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.offcanvas-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.offcanvas-body .navbar-nav {
+  margin-top: 20px;
+}
+
+.offcanvas-body .nav-item {
+  margin-bottom: 15px;
+}
+
+.offcanvas-body .nav-item a {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+  padding: 8px 0;
+  display: block;
+}
+
+.offcanvas-body .nav-item a:hover,
+.offcanvas-body .nav-item a.active {
+  color: var(--primary-color);
+}
+
+.offcanvas-body .nav-item a:hover::after,
+.offcanvas-body .nav-item a.active::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 0;
+  bottom: 0;
+}
+
+.offcanvas-btn .ud-main-btn {
+  width: 100%;
+  text-align: center;
+}
+
+.offcanvas-btn .ud-login-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+
+.offcanvas-btn .ud-login-btn:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+/* Animation for offcanvas */
+.offcanvas.offcanvas-end {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  top: 0 !important;
+  right: 0;
+  height: 100vh !important;
+  border-left: 1px solid #eee;
+}
+
+.offcanvas.offcanvas-end.show {
+  transform: translateX(0);
+}
+
+/* Fix for mobile devices */
+@media (max-width: 576px) {
+  .offcanvas {
+    width: 85%;
+    top: 0 !important;
+    height: 100vh !important;
+  }
+}
+
+/* Add overlay when offcanvas is open */
+.offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Ensure the navbar is responsive */
+@media (max-width: 991px) {
+  .navbar-brand {
+    padding: 15px 0;
+  }
+}
+
+/* Team section improvements */
+.ud-team-info {
+  padding: 15px 0;
+}
+
+.ud-team-socials {
+  margin-bottom: 20px;
+}
+
+/* Testimonial improvements */
+.ud-testimonial-content {
+  min-height: 150px;
+}
+
+@media (max-width: 768px) {
+  .ud-single-testimonial {
+    margin-bottom: 30px;
+  }
+}
+
+/* Navbar toggler animation */
+.navbar-toggler.active .toggler-icon:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler.active .toggler-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Hide desktop menu on mobile */
+@media (max-width: 991px) {
+  .desktop-menu {
+    display: none !important;
+  }
+}
+
+/* Ensure offcanvas is visible on all devices */
+.offcanvas.show {
+  visibility: visible !important;
+  transform: translateX(0) !important;
+  top: 0 !important;
+  height: 100vh !important;
+}
+
+/* Fix for iOS devices */
+@supports (-webkit-overflow-scrolling: touch) {
+  .offcanvas {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .offcanvas.show {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 300px;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+  }
+  
+  @media (max-width: 576px) {
+    .offcanvas.show {
+      width: 100%;
+    }
+  }
+}
+
+/* Ensure body doesn't scroll when offcanvas is open */
+body.offcanvas-open {
+  overflow: hidden;
+}
+
+/* Ensure offcanvas is always on top of other elements */
+.offcanvas, .offcanvas-backdrop {
+  z-index: 9999 !important;
+}
+
+/* Fix for multiple headers in offcanvas */
+.offcanvas-header:not(.single-header) {
+  display: none;
+}
+
+.offcanvas .btn-close:not(:first-child) {
+  display: none;
+}
+
+/* Ensure offcanvas header is properly styled */
+.offcanvas-header.single-header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+}
+
+.offcanvas-header .offcanvas-title {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Adjust the custom close button for the colored header */
+.offcanvas-header .custom-close-btn {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.offcanvas-header .custom-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix for sticky navbar and offcanvas interaction */
+.ud-header.sticky + .offcanvas,
+.ud-header.sticky ~ .offcanvas {
+  top: 0 !important;
+}
+
+/* Ensure offcanvas content is properly styled */
+.offcanvas-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Ensure navbar items in offcanvas are properly styled */
+.offcanvas-body .nav-item a {
+  display: block;
+  padding: 10px 0;
+  color: var(--heading-color);
+  font-weight: 500;
+  transition: all 0.3s ease-out 0s;
+  position: relative;
+}
+
+/* Fix for offcanvas menu on all devices */
+@media (max-width: 991px) {
+  .offcanvas {
+    width: 300px;
+    max-width: 80%;
+    position: fixed !important;
+    top: 0 !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+    overflow-y: auto;
+  }
+  
+  .offcanvas.show {
+    transform: translateX(0) !important;
+  }
+  
+  .offcanvas-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9998 !important;
+  }
+  
+  body.offcanvas-open {
+    overflow: hidden !important;
+  }
+}
+
+/* Fix for the close button in offcanvas */
+.offcanvas .btn-close {
+  opacity: 1 !important;
+  filter: invert(1) grayscale(100%) brightness(200%);
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  background-size: 1.25rem;
+}
+
+.offcanvas .btn-close-dark {
+  filter: none;
+  opacity: 0.8 !important;
+  background-size: 1.25rem;
+}
+
+/* Ensure the close button is visible with a background */
+.offcanvas .btn-close:hover {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+/* Custom close button for offcanvas */
+.custom-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-close-btn:hover {
+  background-color: #0e3fa9;
+  transform: rotate(90deg);
+}
+
+.custom-close-btn i {
+  font-size: 18px;
+  line-height: 1;
 }

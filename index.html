@@ -11,43 +11,43 @@
     <!-- Primary Meta Tags -->
     <meta
       name="title"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+      content="Tech World Web - Professional IT Solutions & Digital Services"
     />
     <meta
       name="description"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+      content="Tech World Web offers professional web development, UI/UX design, graphic design, SEO services, branding, and digital marketing solutions."
     />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://uideck.com/play/" />
+    <meta property="og:url" content="https://techworldweb.com/" />
     <meta
       property="og:title"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+      content="Tech World Web - Professional IT Solutions & Digital Services"
     />
     <meta
       property="og:description"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+      content="Tech World Web offers professional web development, UI/UX design, graphic design, SEO services, branding, and digital marketing solutions."
     />
     <meta
       property="og:image"
-      content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg"
+      content="assets/images/carousel/banner1.jpg"
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://uideck.com/play/" />
+    <meta property="twitter:url" content="https://techworldweb.com/" />
     <meta
       property="twitter:title"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck"
+      content="Tech World Web - Professional IT Solutions & Digital Services"
     />
     <meta
       property="twitter:description"
-      content="Play - Free Open Source HTML Bootstrap Template by UIdeck Team"
+      content="Tech World Web offers professional web development, UI/UX design, graphic design, SEO services, branding, and digital marketing solutions."
     />
     <meta
       property="twitter:image"
-      content="https://uideck.com/wp-content/uploads/2021/09/play-meta-bs.jpg"
+      content="assets/images/carousel/banner1.jpg"
     />
 
     <!--====== Favicon Icon ======-->
@@ -63,6 +63,39 @@
     <link rel="stylesheet" href="assets/css/lineicons.css" />
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
+    
+    <!-- Additional styles for offcanvas fix -->
+    <style>
+      /* Fix for offcanvas menu */
+      .offcanvas {
+        position: fixed !important;
+        top: 0 !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+      }
+      
+      /* Ensure offcanvas is always visible when shown */
+      .offcanvas.show {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+      }
+      
+      /* Fix for sticky navbar and offcanvas interaction */
+      .ud-header.sticky ~ .offcanvas,
+      .ud-header.sticky + .offcanvas {
+        top: 0 !important;
+      }
+      
+      /* Ensure offcanvas backdrop covers the entire viewport */
+      .offcanvas-backdrop {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9998 !important;
+      }
+    </style>
   </head>
   <body>
     <!-- ====== Header Start ====== -->
@@ -72,37 +105,72 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo">Tech world web</span>
+                <span class="fw-bold text-white startup-logo">TECH WORLD WEB</span>
               </a>
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
               </button>
 
-              <div class="navbar-collapse">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header single-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
+                  <button type="button" class="custom-close-btn" style="display: flex;" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="lni lni-close"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div class="offcanvas-btn mt-4">
+                    <a class="ud-main-btn ud-login-btn" href="contact.html">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Menu - Hidden on Mobile -->
+              <div class="desktop-menu d-none d-lg-flex align-items-center">
                 <ul id="nav" class="navbar-nav mx-auto">
                   <li class="nav-item">
-                    <a  href="/index.html">Home</a>
+                    <a class="active" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/service.html">Services</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/blog.html">Blogs</a>
+                    <a href="blog.html">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/about.html">About Us</a>
+                    <a href="about.html">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/contact.html">Contact Us</a>
+                    <a href="contact.html">Contact Us</a>
                   </li>                   
                 </ul>
-              </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <a class="ud-main-btn ud-white-btn demoo" href="contact.html">
-                  Get In Touch
-                </a>
+                <div class="navbar-btn">
+                  <a class="ud-main-btn ud-white-btn" href="contact.html">
+                    Get In Touch
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -112,31 +180,37 @@
     <!-- ====== Header End ====== -->
 
     <!-- Carousel Start -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" style="height: 700px;">
-          <img src="./assets/images/carousel/banner1.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption"><h1 class="hero-title">Innovative IT Solutions for Tomorrow's Challenges</h1>
-            <p class="hero-description">We deliver customized IT solutions to streamline your business operations.
-            </p>
+          <img src="./assets/images/carousel/banner1.jpg" class="d-block w-100" alt="Web Development Services">
+          <div class="carousel-caption">
+            <h1 class="hero-title">Expert Web Development & Digital Solutions</h1>
+            <p class="hero-description">Custom websites and applications tailored to your business needs and goals.</p>
+            <div class="carousel-btn mt-4">
+              <a href="service.html" class="ud-main-btn ud-white-btn">Our Services</a>
+            </div>
           </div>
-          
         </div>
         <div class="carousel-item" style="height: 700px;">
-          <img src="./assets/images/carousel/banner2.png" class="d-block w-100" alt="...">
-          <div class="carousel-caption"><h1  class="hero-title">Empowering Businesses with Cutting-Edge Technology</h1>
-            <p class="hero-description">Experience seamless digital transformation with our expert services.
-            </p>
+          <img src="./assets/images/carousel/banner2.png" class="d-block w-100" alt="UI/UX Design Services">
+          <div class="carousel-caption">
+            <h1 class="hero-title">Creative UI/UX Design & Branding Solutions</h1>
+            <p class="hero-description">Stunning designs that enhance user experience and strengthen your brand identity.</p>
+            <div class="carousel-btn mt-4">
+              <a href="service.html" class="ud-main-btn ud-white-btn">Our Services</a>
+            </div>
           </div>
-         
         </div>
         <div class="carousel-item" style="height: 700px;">
-          <img src="./assets/images/carousel/banner3.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption"><h1  class="hero-title">Your Trusted Partner in Digital Transformation</h1>
-            <p class="hero-description">Reliable, cutting-edge technology to drive your business growth.
-            </p>
+          <img src="./assets/images/carousel/banner3.jpg" class="d-block w-100" alt="Digital Marketing Services">
+          <div class="carousel-caption">
+            <h1 class="hero-title">Strategic SEO & Digital Marketing</h1>
+            <p class="hero-description">Boost your online presence and reach your target audience effectively.</p>
+            <div class="carousel-btn mt-4">
+              <a href="service.html" class="ud-main-btn ud-white-btn">Our Services</a>
+            </div>
           </div>
-         
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -148,10 +222,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    
-     <!-- Carousel End -->
-
-  
+    <!-- Carousel End -->
 
     <!-- ====== Features Start ====== -->
     <section id="features" class="ud-features">
@@ -159,11 +230,11 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="ud-section-title">
-              <span>Features</span>
-              <h2>Main Features of Play</h2>
+              <span>Our Services</span>
+              <h2>What We Offer</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                We provide comprehensive IT solutions to help your business thrive in the digital landscape.
+                Our expert team delivers high-quality services tailored to your specific needs.
               </p>
             </div>
           </div>
@@ -172,14 +243,14 @@
           <div class="col-xl-3 col-lg-3 col-sm-6">
             <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
               <div class="ud-feature-icon">
-                <i class="lni lni-gift"></i>
+                <i class="lni lni-code"></i>
               </div>
               <div class="ud-feature-content">
-                <h3 class="ud-feature-title">Free and Open-Source</h3>
+                <h3 class="ud-feature-title">Web Development</h3>
                 <p class="ud-feature-desc">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Custom websites, web applications, and e-commerce solutions built with the latest technologies.
                 </p>
-                <a href="javascript:void(0)" class="ud-feature-link">
+                <a href="service.html" class="ud-feature-link">
                   Learn More
                 </a>
               </div>
@@ -188,14 +259,14 @@
           <div class="col-xl-3 col-lg-3 col-sm-6">
             <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
               <div class="ud-feature-icon">
-                <i class="lni lni-move"></i>
+                <i class="lni lni-layout"></i>
               </div>
               <div class="ud-feature-content">
-                <h3 class="ud-feature-title">Multipurpose Template</h3>
+                <h3 class="ud-feature-title">UI/UX Design</h3>
                 <p class="ud-feature-desc">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  User-centered design that enhances usability, accessibility, and creates delightful user experiences.
                 </p>
-                <a href="javascript:void(0)" class="ud-feature-link">
+                <a href="service.html" class="ud-feature-link">
                   Learn More
                 </a>
               </div>
@@ -204,14 +275,14 @@
           <div class="col-xl-3 col-lg-3 col-sm-6">
             <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
               <div class="ud-feature-icon">
-                <i class="lni lni-layout"></i>
+                <i class="lni lni-brush"></i>
               </div>
               <div class="ud-feature-content">
-                <h3 class="ud-feature-title">High-quality Design</h3>
+                <h3 class="ud-feature-title">Graphic Design</h3>
                 <p class="ud-feature-desc">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Eye-catching visuals, logos, marketing materials, and brand assets that make you stand out.
                 </p>
-                <a href="javascript:void(0)" class="ud-feature-link">
+                <a href="service.html" class="ud-feature-link">
                   Learn More
                 </a>
               </div>
@@ -220,14 +291,80 @@
           <div class="col-xl-3 col-lg-3 col-sm-6">
             <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
               <div class="ud-feature-icon">
-                <i class="lni lni-layers"></i>
+                <i class="lni lni-graph"></i>
               </div>
               <div class="ud-feature-content">
-                <h3 class="ud-feature-title">All Essential Elements</h3>
+                <h3 class="ud-feature-title">SEO Services</h3>
                 <p class="ud-feature-desc">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Improve your search engine rankings and drive organic traffic to your website with our SEO expertise.
                 </p>
-                <a href="javascript:void(0)" class="ud-feature-link">
+                <a href="service.html" class="ud-feature-link">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
+              <div class="ud-feature-icon">
+                <i class="lni lni-briefcase"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Branding</h3>
+                <p class="ud-feature-desc">
+                  Comprehensive branding strategies that build a strong, memorable identity for your business.
+                </p>
+                <a href="service.html" class="ud-feature-link">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
+              <div class="ud-feature-icon">
+                <i class="lni lni-bullhorn"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Digital Marketing</h3>
+                <p class="ud-feature-desc">
+                  Strategic marketing campaigns across digital channels to increase your reach and conversions.
+                </p>
+                <a href="service.html" class="ud-feature-link">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
+              <div class="ud-feature-icon">
+                <i class="lni lni-mobile"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">Mobile App Development</h3>
+                <p class="ud-feature-desc">
+                  Native and cross-platform mobile applications that deliver exceptional user experiences.
+                </p>
+                <a href="service.html" class="ud-feature-link">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-sm-6">
+            <div class="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
+              <div class="ud-feature-icon">
+                <i class="lni lni-consulting"></i>
+              </div>
+              <div class="ud-feature-content">
+                <h3 class="ud-feature-title">IT Consulting</h3>
+                <p class="ud-feature-desc">
+                  Expert advice and strategic planning to help you make informed technology decisions.
+                </p>
+                <a href="service.html" class="ud-feature-link">
                   Learn More
                 </a>
               </div>
@@ -245,20 +382,15 @@
           <div class="ud-about-content-wrapper">
             <div class="ud-about-content">
               <span class="tag">About Us</span>
-              <h2>Brilliant Toolkit to Build Nextgen Website Faster.</h2>
+              <h2>Your Partner for Digital Transformation</h2>
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
-                best protect highly vulnerable business applications with
-                interactive panel discussions and roundtables led by subject
-                matter experts.
+                At Tech World Web, we combine technical expertise with creative thinking to deliver exceptional digital solutions. Our team of skilled professionals is dedicated to helping businesses of all sizes establish a strong online presence and achieve their digital goals.
               </p>
 
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
-                best protect highly vulnerable business applications with
-                interactive panel.
+                We believe in building long-term partnerships with our clients, understanding their unique challenges, and developing customized strategies that drive growth and success in today's competitive digital landscape.
               </p>
-              <a href="javascript:void(0)" class="ud-main-btn">Learn More</a>
+              <a href="about.html" class="ud-main-btn">Learn More</a>
             </div>
           </div>
           <div class="ud-about-image">
@@ -276,10 +408,10 @@
           <div class="col-lg-12">
             <div class="ud-section-title mx-auto text-center">
               <span>Pricing</span>
-              <h2>Our Pricing Plans</h2>
+              <h2>Our Service Packages</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                We offer flexible pricing options to meet the needs of businesses of all sizes.
+                Choose the package that best fits your requirements and budget.
               </p>
             </div>
           </div>
@@ -292,22 +424,22 @@
               data-wow-delay=".15s"
             >
               <div class="ud-pricing-header">
-                <h3>STARTING FROM</h3>
-                <h4>$ 19.99/mo</h4>
+                <h3>STARTER PACKAGE</h3>
+                <h4>$999</h4>
               </div>
               <div class="ud-pricing-body">
                 <ul>
-                  <li>5 User</li>
-                  <li>All UI components</li>
-                  <li>Lifetime access</li>
-                  <li>Free updates</li>
-                  <li>Use on 1 (one) project</li>
-                  <li>4 Months support</li>
+                  <li>Basic Website (5 pages)</li>
+                  <li>Mobile Responsive Design</li>
+                  <li>Contact Form Integration</li>
+                  <li>Basic SEO Setup</li>
+                  <li>Social Media Integration</li>
+                  <li>3 Months Support</li>
                 </ul>
               </div>
               <div class="ud-pricing-footer">
-                <a href="javascript:void(0)" class="ud-main-btn ud-border-btn">
-                  Purchase Now
+                <a href="contact.html" class="ud-main-btn ud-border-btn">
+                  Get Started
                 </a>
               </div>
             </div>
@@ -319,22 +451,22 @@
             >
               <span class="ud-popular-tag">POPULAR</span>
               <div class="ud-pricing-header">
-                <h3>STARTING FROM</h3>
-                <h4>$ 30.99/mo</h4>
+                <h3>BUSINESS PACKAGE</h3>
+                <h4>$1,999</h4>
               </div>
               <div class="ud-pricing-body">
                 <ul>
-                  <li>5 User</li>
-                  <li>All UI components</li>
-                  <li>Lifetime access</li>
-                  <li>Free updates</li>
-                  <li>Use on 1 (one) project</li>
-                  <li>4 Months support</li>
+                  <li>Custom Website (10 pages)</li>
+                  <li>Advanced Responsive Design</li>
+                  <li>Content Management System</li>
+                  <li>E-commerce Integration</li>
+                  <li>Comprehensive SEO Setup</li>
+                  <li>6 Months Support</li>
                 </ul>
               </div>
               <div class="ud-pricing-footer">
-                <a href="javascript:void(0)" class="ud-main-btn ud-white-btn">
-                  Purchase Now
+                <a href="contact.html" class="ud-main-btn ud-white-btn">
+                  Get Started
                 </a>
               </div>
             </div>
@@ -345,22 +477,22 @@
               data-wow-delay=".15s"
             >
               <div class="ud-pricing-header">
-                <h3>STARTING FROM</h3>
-                <h4>$ 70.99/mo</h4>
+                <h3>ENTERPRISE PACKAGE</h3>
+                <h4>Custom</h4>
               </div>
               <div class="ud-pricing-body">
                 <ul>
-                  <li>5 User</li>
-                  <li>All UI components</li>
-                  <li>Lifetime access</li>
-                  <li>Free updates</li>
-                  <li>Use on 1 (one) project</li>
-                  <li>4 Months support</li>
+                  <li>Custom Web Application</li>
+                  <li>Advanced UI/UX Design</li>
+                  <li>Custom Functionality</li>
+                  <li>Database Integration</li>
+                  <li>Advanced Analytics</li>
+                  <li>12 Months Priority Support</li>
                 </ul>
               </div>
               <div class="ud-pricing-footer">
-                <a href="javascript:void(0)" class="ud-main-btn ud-border-btn">
-                  Purchase Now
+                <a href="contact.html" class="ud-main-btn ud-border-btn">
+                  Contact Us
                 </a>
               </div>
             </div>
@@ -380,10 +512,9 @@
           <div class="col-lg-12">
             <div class="ud-section-title text-center mx-auto">
               <span>FAQ</span>
-              <h2>Any Questions? Answered</h2>
+              <h2>Frequently Asked Questions</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Find answers to common questions about our services, process, and how we can help your business succeed online.
               </p>
             </div>
           </div>
@@ -401,15 +532,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>How to use UIdeck?</span>
+                  <span>What services does Tech World Web offer?</span>
                 </button>
                 <div id="collapseOne" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    We offer a comprehensive range of digital services including web development, UI/UX design, graphic design, SEO optimization, branding, digital marketing, mobile app development, and IT consulting. Our team can help with everything from simple websites to complex web applications.
                   </div>
                 </div>
               </div>
@@ -424,15 +551,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>How to download icons from Lineicons?</span>
+                  <span>How long does it take to complete a website?</span>
                 </button>
                 <div id="collapseTwo" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    The timeline for website development varies depending on the complexity of the project. A basic website typically takes 2-4 weeks, while more complex websites or web applications can take 8-12 weeks or more. During our initial consultation, we'll provide you with a more accurate timeline based on your specific requirements.
                   </div>
                 </div>
               </div>
@@ -447,15 +570,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Is GrayGrids part of UIdeck?</span>
+                  <span>Do you offer website maintenance services?</span>
                 </button>
                 <div id="collapseThree" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Yes, we offer ongoing website maintenance and support services to ensure your website remains secure, up-to-date, and performing optimally. Our maintenance packages include regular updates, security monitoring, performance optimization, content updates, and technical support.
                   </div>
                 </div>
               </div>
@@ -472,15 +591,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Can I use this template for commercial project?</span>
+                  <span>What is your approach to SEO?</span>
                 </button>
                 <div id="collapseFour" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Our SEO approach is comprehensive and tailored to your business goals. We start with thorough keyword research and competitor analysis, then optimize your website's structure, content, and technical elements. We also focus on building quality backlinks, improving local SEO, and providing regular performance reports to track progress and make adjustments as needed.
                   </div>
                 </div>
               </div>
@@ -495,15 +610,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Do you have plan releasing Play Pro?</span>
+                  <span>How do you handle project communication?</span>
                 </button>
                 <div id="collapseFive" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    We believe in transparent and regular communication throughout the project. We assign a dedicated project manager to each client who serves as your main point of contact. We use project management tools to keep you updated on progress, conduct regular check-in meetings, and are always available via email or phone for any questions or concerns.
                   </div>
                 </div>
               </div>
@@ -518,15 +629,11 @@
                   <span class="icon flex-shrink-0">
                     <i class="lni lni-chevron-down"></i>
                   </span>
-                  <span>Where and how to host this template?</span>
+                  <span>What makes Tech World Web different from other agencies?</span>
                 </button>
                 <div id="collapseSix" class="accordion-collapse collapse">
                   <div class="ud-faq-body">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    What sets us apart is our commitment to understanding your business goals and delivering solutions that drive real results. We combine technical expertise with creative thinking, focus on building long-term partnerships rather than one-off projects, and provide exceptional customer service. Our team stays updated with the latest technologies and trends to ensure your digital presence remains competitive.
                   </div>
                 </div>
               </div>
@@ -544,10 +651,9 @@
           <div class="col-lg-12">
             <div class="ud-section-title mx-auto text-center">
               <span>Testimonials</span>
-              <h2>What our Customers Says</h2>
+              <h2>What Our Clients Say</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Don't just take our word for it. Here's what some of our clients have to say about working with Tech World Web.
               </p>
             </div>
           </div>
@@ -568,8 +674,7 @@
               </div>
               <div class="ud-testimonial-content">
                 <p>
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.
+                  "Tech World Web transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. Their team was professional, responsive, and delivered beyond our expectations. Our online leads have increased by 40% since the launch!"
                 </p>
               </div>
               <div class="ud-testimonial-info">
@@ -580,8 +685,8 @@
                   />
                 </div>
                 <div class="ud-testimonial-meta">
-                  <h4>Sabo Masties</h4>
-                  <p>Founder @UIdeck</p>
+                  <h4>Sarah Johnson</h4>
+                  <p>Marketing Director, Innovate Solutions</p>
                 </div>
               </div>
             </div>
@@ -600,8 +705,7 @@
               </div>
               <div class="ud-testimonial-content">
                 <p>
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.
+                  "Working with Tech World Web on our e-commerce platform was a game-changer for our business. Their attention to detail, technical expertise, and strategic approach helped us create a seamless shopping experience. Our conversion rate has improved significantly!"
                 </p>
               </div>
               <div class="ud-testimonial-info">
@@ -612,8 +716,8 @@
                   />
                 </div>
                 <div class="ud-testimonial-meta">
-                  <h4>Margin Gesmu</h4>
-                  <p>Founder @Lineicons</p>
+                  <h4>Michael Chen</h4>
+                  <p>CEO, Urban Trends</p>
                 </div>
               </div>
             </div>
@@ -632,8 +736,7 @@
               </div>
               <div class="ud-testimonial-content">
                 <p>
-                  “Our members are so impressed. It's intuitive. It's clean.
-                  It's distraction free. If you're building a community.
+                  "The SEO and digital marketing services provided by Tech World Web have been instrumental in growing our online presence. Their data-driven approach and regular reporting have helped us understand our progress and continuously improve our strategy."
                 </p>
               </div>
               <div class="ud-testimonial-info">
@@ -644,8 +747,8 @@
                   />
                 </div>
                 <div class="ud-testimonial-meta">
-                  <h4>William Smith</h4>
-                  <p>Founder @GrayGrids</p>
+                  <h4>Emily Rodriguez</h4>
+                  <p>Operations Manager, Bright Future Consulting</p>
                 </div>
               </div>
             </div>
@@ -655,31 +758,31 @@
           <div class="col-lg-12">
             <div class="ud-brands wow fadeInUp" data-wow-delay=".2s">
               <div class="ud-title">
-                <h6>Trusted and Used by</h6>
+                <h6>Trusted by Leading Brands</h6>
               </div>
               <div class="ud-brands-logo">
                 <div class="ud-single-logo">
-                  <img src="assets/images/brands/ayroui.svg" alt="ayroui" />
+                  <img src="assets/images/brands/ayroui.svg" alt="brand logo" />
                 </div>
                 <div class="ud-single-logo">
-                  <img src="assets/images/brands/uideck.svg" alt="uideck" />
+                  <img src="assets/images/brands/uideck.svg" alt="brand logo" />
                 </div>
                 <div class="ud-single-logo">
                   <img
                     src="assets/images/brands/graygrids.svg"
-                    alt="graygrids"
+                    alt="brand logo"
                   />
                 </div>
                 <div class="ud-single-logo">
                   <img
                     src="assets/images/brands/lineicons.svg"
-                    alt="lineicons"
+                    alt="brand logo"
                   />
                 </div>
                 <div class="ud-single-logo">
                   <img
                     src="assets/images/brands/ecommerce-html.svg"
-                    alt="ecommerce-html"
+                    alt="brand logo"
                   />
                 </div>
               </div>
@@ -697,10 +800,10 @@
           <div class="col-lg-12">
             <div class="ud-section-title mx-auto text-center">
               <span>Our Team</span>
-              <h2>Meet The Team</h2>
+              <h2>Meet Our Experts</h2>
               <p>
-                There are many variations of passages of Lorem Ipsum available
-                but the majority have suffered alteration in some form.
+                Our talented team of professionals is dedicated to delivering exceptional results for our clients.
+                With diverse skills and expertise, we work together to bring your digital vision to life.
               </p>
             </div>
           </div>
@@ -711,7 +814,7 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="assets/images/team/team-01.png" alt="team" />
+                  <img src="assets/images/team/team-01.png" alt="team member" />
                 </div>
 
                 <img
@@ -726,22 +829,22 @@
                 />
               </div>
               <div class="ud-team-info">
-                <h5>Adveen Desuza</h5>
-                <h6>UI Designer</h6>
+                <h5>David Anderson</h5>
+                <h6>Founder & CEO</h6>
               </div>
               <ul class="ud-team-socials">
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://linkedin.com/" target="_blank">
                     <i class="lni lni-facebook-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://twitter.com/" target="_blank">
                     <i class="lni lni-twitter-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://instagram.com/" target="_blank">
                     <i class="lni lni-instagram-filled"></i>
                   </a>
                 </li>
@@ -752,7 +855,7 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".15s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="assets/images/team/team-02.png" alt="team" />
+                  <img src="assets/images/team/team-02.png" alt="team member" />
                 </div>
 
                 <img
@@ -767,22 +870,22 @@
                 />
               </div>
               <div class="ud-team-info">
-                <h5>Jezmin uniya</h5>
-                <h6>Product Designer</h6>
+                <h5>Jessica Martinez</h5>
+                <h6>Lead UI/UX Designer</h6>
               </div>
               <ul class="ud-team-socials">
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://linkedin.com/" target="_blank">
                     <i class="lni lni-facebook-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://twitter.com/" target="_blank">
                     <i class="lni lni-twitter-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://instagram.com/" target="_blank">
                     <i class="lni lni-instagram-filled"></i>
                   </a>
                 </li>
@@ -793,7 +896,7 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".2s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="assets/images/team/team-03.png" alt="team" />
+                  <img src="assets/images/team/team-03.png" alt="team member" />
                 </div>
 
                 <img
@@ -808,22 +911,22 @@
                 />
               </div>
               <div class="ud-team-info">
-                <h5>Andrieo Gloree</h5>
-                <h6>App Developer</h6>
+                <h5>Robert Wilson</h5>
+                <h6>Senior Web Developer</h6>
               </div>
               <ul class="ud-team-socials">
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://linkedin.com/" target="_blank">
                     <i class="lni lni-facebook-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://twitter.com/" target="_blank">
                     <i class="lni lni-twitter-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://instagram.com/" target="_blank">
                     <i class="lni lni-instagram-filled"></i>
                   </a>
                 </li>
@@ -834,7 +937,7 @@
             <div class="ud-single-team wow fadeInUp" data-wow-delay=".25s">
               <div class="ud-team-image-wrapper">
                 <div class="ud-team-image">
-                  <img src="assets/images/team/team-04.png" alt="team" />
+                  <img src="assets/images/team/team-04.png" alt="team member" />
                 </div>
 
                 <img
@@ -849,22 +952,22 @@
                 />
               </div>
               <div class="ud-team-info">
-                <h5>Jackie Sanders</h5>
-                <h6>Content Writer</h6>
+                <h5>Amanda Lee</h5>
+                <h6>Digital Marketing Specialist</h6>
               </div>
               <ul class="ud-team-socials">
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://linkedin.com/" target="_blank">
                     <i class="lni lni-facebook-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://twitter.com/" target="_blank">
                     <i class="lni lni-twitter-filled"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/MusharofChy">
+                  <a href="https://instagram.com/" target="_blank">
                     <i class="lni lni-instagram-filled"></i>
                   </a>
                 </li>
@@ -885,7 +988,7 @@
               <div class="ud-contact-title">
                 <span>CONTACT US</span>
                 <h2>
-                  Let’s talk about <br />
+                  Let's talk about <br />
                   Love to hear from you!
                 </h2>
               </div>
@@ -1040,133 +1143,116 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="ud-widget">
                 <a href="index.html" class="ud-footer-logo">
-                  <span class="fw-bold text-white startup-logo">Tech world web
+                  <span class="fw-bold text-white startup-logo">TECH WORLD WEB
                   </span>
                 </a>
                 <p class="ud-widget-desc">
-                  We specialize in design, full-stack development, and SEO to help businesses thrive in the digital world. 
+                  We specialize in web development, UI/UX design, and digital marketing to help businesses thrive in the digital world. 
                 </p>
-                <!-- <ul class="ud-widget-socials">
+                <ul class="ud-widget-socials">
                   <li>
-                    <a href="https://twitter.com/MusharofChy">
+                    <a href="https://facebook.com/" target="_blank">
                       <i class="lni lni-facebook-filled"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/MusharofChy">
+                    <a href="https://twitter.com/" target="_blank">
                       <i class="lni lni-twitter-filled"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/MusharofChy">
+                    <a href="https://instagram.com/" target="_blank">
                       <i class="lni lni-instagram-filled"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/MusharofChy">
+                    <a href="https://linkedin.com/" target="_blank">
                       <i class="lni lni-linkedin-original"></i>
                     </a>
                   </li>
-                </ul> -->
+                </ul>
               </div>
             </div>
 
             <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">About Us</h5>
+                <h5 class="ud-widget-title">Quick Links</h5>
                 <ul class="ud-widget-links">
                   <li>
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="index.html">Home</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Services</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">About</a>
+                    <a href="about.html">About Us</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Blogs</a>
+                    <a href="blog.html">Blog</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">Features</h5>
+                <h5 class="ud-widget-title">Our Services</h5>
                 <ul class="ud-widget-links">
                   <li>
-                    <a href="javascript:void(0)">How it works</a>
+                    <a href="service.html">Web Development</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Privacy policy</a>
+                    <a href="service.html">UI/UX Design</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Terms of service</a>
+                    <a href="service.html">Digital Marketing</a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">Refund policy</a>
+                    <a href="service.html">SEO Optimization</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">Contact Us</h5>
+                <h5 class="ud-widget-title">Contact Info</h5>
                 <ul class="ud-widget-links">
                   <li>
-                    <a
-                      href="https://lineicons.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      > info@yourstartup.com
+                    <a href="mailto:info@techworldweb.com">
+                      info@techworldweb.com
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://ecommercehtml.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >+123 456 7890</a
-                    >
-                  <!-- </li>
-                  <li>
-                    <a
-                      href="https://ayroui.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Ayro UI</a
-                    >
+                    <a href="tel:+1234567890">
+                      +1 (234) 567-890
+                    </a>
                   </li>
                   <li>
-                    <a
-                      href="https://graygrids.com/"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      >Plain Admin</a
-                    >
-                  </li> -->
+                    <a href="javascript:void(0)">
+                      123 Business Avenue, Suite 500, New York, NY 10001
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10">
               <div class="ud-widget">
-                <h5 class="ud-widget-title">Connect with us </h5>
+                <h5 class="ud-widget-title">Connect with us</h5>
                 <ul class="ud-widget-brands">
                   <li>
                     <a
-                      href="https://ayroui.com/"
-                      rel="nofollow noopner"
+                      href="https://instagram.com/"
+                      rel="nofollow noopener"
                       target="_blank"
                     >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.166-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
                     </svg>
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://ecommercehtml.com/"
-                      rel="nofollow noopner"
+                      href="https://facebook.com/"
+                      rel="nofollow noopener"
                       target="_blank"
                     >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -1176,23 +1262,23 @@
                   </li>
                   <li>
                     <a
-                      href="https://graygrids.com/"
-                      rel="nofollow noopner"
+                      href="https://wa.me/1234567890"
+                      rel="nofollow noopener"
                       target="_blank"
                     >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.646.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.59-.59-.985-1.175-1.103-1.372-.114-.198-.198-.198-.011-.304.088-.403.087-.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.088.197-.232.296-.1-.114.133-.133-.133-.133-.38-.232"/>
                     </svg>
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://lineicons.com/"
-                      rel="nofollow noopner"
+                      href="https://linkedin.com/"
+                      rel="nofollow noopener"
                       target="_blank"
                     >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      <path d="M0 1.146C0 .513.526 0 1.146 1.175h13.65C15.474 0 16 .513 16 .513v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878.878-.878.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
                     </svg>
                     </a>
                   </li>
@@ -1231,19 +1317,19 @@
           <div class="row">
             <div class="col-md-4">
               <p class="ud-footer-bottom-left">
-                © 2025 Your Tech World Web. All Rights Reserved
+                © 2024 Tech World Web. All Rights Reserved
               </p>
             </div>
             <div class="col-md-8">
               <ul class="ud-footer-bottom-left privacy-policy">
                 <li>
-                  <a href="javascript:void(0)">Privacy policy</a>
+                  <a href="javascript:void(0)">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">Support policy</a>
+                  <a href="javascript:void(0)">Terms of Service</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">Terms of service</a>
+                  <a href="javascript:void(0)">Cookie Policy</a>
                 </li>
               </ul>
             </div>
@@ -1264,6 +1350,7 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/offcanvas-fix.js"></script>
     <script>
       // ==== for menu scroll
       const pageLink = document.querySelectorAll(".ud-menu-scroll");
@@ -1306,6 +1393,47 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
+      
+      // Handle offcanvas behavior with sticky navbar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the offcanvas element
+        const offcanvasNavbar = document.getElementById('offcanvasNavbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // Add event listener for when offcanvas is shown
+        if (offcanvasNavbar) {
+          offcanvasNavbar.addEventListener('show.bs.offcanvas', function () {
+            document.body.classList.add('offcanvas-open');
+          });
+          
+          // Add event listener for when offcanvas is hidden
+          offcanvasNavbar.addEventListener('hide.bs.offcanvas', function () {
+            document.body.classList.remove('offcanvas-open');
+          });
+          
+          // Toggle active class on navbar toggler
+          navbarToggler.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        }
+        
+        // Fix for offcanvas position when navbar is sticky
+        const header = document.querySelector('.ud-header');
+        if (header) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.attributeName === 'class') {
+                const isSticky = header.classList.contains('sticky');
+                if (isSticky && offcanvasNavbar) {
+                  offcanvasNavbar.style.top = '0';
+                }
+              }
+            });
+          });
+          
+          observer.observe(header, { attributes: true });
+        }
+      });
     </script>
   </body>
 </html>

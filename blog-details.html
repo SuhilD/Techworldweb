@@ -20,6 +20,39 @@
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
 
+    <!-- Additional styles for offcanvas fix -->
+    <style>
+      /* Fix for offcanvas menu */
+      .offcanvas {
+        position: fixed !important;
+        top: 0 !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+      }
+      
+      /* Ensure offcanvas is always visible when shown */
+      .offcanvas.show {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+      }
+      
+      /* Fix for sticky navbar and offcanvas interaction */
+      .ud-header.sticky ~ .offcanvas,
+      .ud-header.sticky + .offcanvas {
+        top: 0 !important;
+      }
+      
+      /* Ensure offcanvas backdrop covers the entire viewport */
+      .offcanvas-backdrop {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9998 !important;
+      }
+    </style>
+
   </head>
   <body>
     <!-- ====== Header Start ====== -->
@@ -29,37 +62,72 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo">Tech world web</span>
+                <span class="fw-bold text-white startup-logo">TECH WORLD WEB</span>
               </a>
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
               </button>
 
-              <div class="navbar-collapse">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header single-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
+                  <button type="button" class="custom-close-btn" style="display: flex;" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="lni lni-close"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="active" href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div class="offcanvas-btn mt-4">
+                    <a class="ud-main-btn ud-login-btn" href="contact.html">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Menu - Hidden on Mobile -->
+              <div class="desktop-menu d-none d-lg-flex align-items-center">
                 <ul id="nav" class="navbar-nav mx-auto">
                   <li class="nav-item">
-                    <a  href="/index.html">Home</a>
+                    <a href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/service.html">Services</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/blog.html">Blogs</a>
+                    <a class="active" href="blog.html">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/about.html">About Us</a>
+                    <a href="about.html">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/contact.html">Contact Us</a>
+                    <a href="contact.html">Contact Us</a>
                   </li>                   
                 </ul>
-              </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <a class="ud-main-btn ud-white-btn" href="contact.html">
-                  Get In Touch
-                </a>
+                <div class="navbar-btn">
+                  <a class="ud-main-btn ud-white-btn" href="contact.html">
+                    Get In Touch
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -123,20 +191,20 @@
                 Facing a challenge is kind of a turn-on for an easy rider
               </h2>
               <p class="ud-blog-details-para">
-                There’s a time and place for everything… including asking for
+                There's a time and place for everything... including asking for
                 reviews. For instance: you should not asking for a review on
                 your checkout page. The sole purpose of this page is to guide
                 your customer to complete their purchase, and this means that
                 the page should be as minimalist and pared-down possible. You
-                don’t want to have any unnecessary elements or Call To Actions.
+                don't want to have any unnecessary elements or Call To Actions.
               </p>
               <p class="ud-blog-details-para">
-                There’s a time and place for everything… including asking for
+                There's a time and place for everything... including asking for
                 reviews. For instance: you should not asking for a review on
                 your checkout page. The sole purpose of this page is to guide
                 your customer to complete their purchase, and this means that
                 the page should be as minimalist and pared-down possible. You
-                don’t want to have any unnecessary elements or Call To Actions.
+                don't want to have any unnecessary elements or Call To Actions.
               </p>
               <h3 class="ud-blog-details-subtitle">Sea no quidam vulputate</h3>
               <p class="ud-blog-details-para">
@@ -155,7 +223,7 @@
                   scatter the darkness of ignorance, and cause a light
                   heretofore unknown to shine amongst men.
                 </p>
-                <h6>“Andrio Domeco”</h6>
+                <h6>"Andrio Domeco"</h6>
               </div>
               <h3 class="ud-blog-details-subtitle">
                 What is it with your ideas?
@@ -641,5 +709,48 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/offcanvas-fix.js"></script>
+    <script>
+      // Handle offcanvas behavior with sticky navbar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the offcanvas element
+        const offcanvasNavbar = document.getElementById('offcanvasNavbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // Add event listener for when offcanvas is shown
+        if (offcanvasNavbar) {
+          offcanvasNavbar.addEventListener('show.bs.offcanvas', function () {
+            document.body.classList.add('offcanvas-open');
+          });
+          
+          // Add event listener for when offcanvas is hidden
+          offcanvasNavbar.addEventListener('hide.bs.offcanvas', function () {
+            document.body.classList.remove('offcanvas-open');
+          });
+          
+          // Toggle active class on navbar toggler
+          navbarToggler.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        }
+        
+        // Fix for offcanvas position when navbar is sticky
+        const header = document.querySelector('.ud-header');
+        if (header) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.attributeName === 'class') {
+                const isSticky = header.classList.contains('sticky');
+                if (isSticky && offcanvasNavbar) {
+                  offcanvasNavbar.style.top = '0';
+                }
+              }
+            });
+          });
+          
+          observer.observe(header, { attributes: true });
+        }
+      });
+    </script>
   </body>
 </html>

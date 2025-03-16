@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play | Open source Project by UIdeck</title>
+    <title>About Us - Tech World Web</title>
 
     <!--====== Favicon Icon ======-->
     <link
@@ -20,6 +20,39 @@
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
 
+    <!-- Additional styles for offcanvas fix -->
+    <style>
+      /* Fix for offcanvas menu */
+      .offcanvas {
+        position: fixed !important;
+        top: 0 !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+      }
+      
+      /* Ensure offcanvas is always visible when shown */
+      .offcanvas.show {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+      }
+      
+      /* Fix for sticky navbar and offcanvas interaction */
+      .ud-header.sticky ~ .offcanvas,
+      .ud-header.sticky + .offcanvas {
+        top: 0 !important;
+      }
+      
+      /* Ensure offcanvas backdrop covers the entire viewport */
+      .offcanvas-backdrop {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9998 !important;
+      }
+    </style>
+
   </head>
   <body>
     <!-- ====== Header Start ====== -->
@@ -29,37 +62,72 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo">Tech world web</span>
+                <span class="fw-bold text-white startup-logo">TECH WORLD WEB</span>
               </a>
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
               </button>
 
-              <div class="navbar-collapse">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header single-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
+                  <button type="button" class="custom-close-btn" style="display: flex;" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="lni lni-close"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="active" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div class="offcanvas-btn mt-4">
+                    <a class="ud-main-btn ud-login-btn" href="contact.html">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Menu - Hidden on Mobile -->
+              <div class="desktop-menu d-none d-lg-flex align-items-center">
                 <ul id="nav" class="navbar-nav mx-auto">
                   <li class="nav-item">
-                    <a  href="/index.html">Home</a>
+                    <a href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/service.html">Services</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/blog.html">Blogs</a>
+                    <a href="blog.html">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a  href="/about.html">About Us</a>
+                    <a class="active" href="about.html">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a href="/contact.html">Contact Us</a>
+                    <a href="contact.html">Contact Us</a>
                   </li>                   
                 </ul>
-              </div>
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <a class="ud-main-btn ud-white-btn" href="contact.html">
-                  Get In Touch
-                </a>
+                <div class="navbar-btn">
+                  <a class="ud-main-btn ud-white-btn" href="contact.html">
+                    Get In Touch
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -74,7 +142,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="ud-banner-content">
-              <h1>About Page</h1>
+              <h1>About Tech World Web</h1>
+              <p>Your trusted partner for comprehensive digital solutions</p>
             </div>
           </div>
         </div>
@@ -89,20 +158,15 @@
           <div class="ud-about-content-wrapper">
             <div class="ud-about-content">
               <span class="tag">About Us</span>
-              <h2>Brilliant Toolkit to Build Nextgen Website Faster.</h2>
+              <h2>Transforming Businesses Through Digital Innovation</h2>
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
-                best protect highly vulnerable business applications with
-                interactive panel discussions and roundtables led by subject
-                matter experts.
+                Tech World Web is a full-service IT company dedicated to helping businesses thrive in the digital landscape. With expertise in web development, UI/UX design, graphic design, SEO services, branding, and digital marketing, we provide comprehensive solutions tailored to your unique business needs.
               </p>
 
               <p>
-                The main ‘thrust’ is to focus on educating attendees on how to
-                best protect highly vulnerable business applications with
-                interactive panel.
+                Our team of skilled professionals combines technical expertise with creative thinking to deliver exceptional results that drive business growth. We believe in building long-term partnerships with our clients, understanding their goals, and developing strategies that help them succeed in an increasingly competitive digital world.
               </p>
-              <a href="javascript:void(0)" class="ud-main-btn">Learn More</a>
+              <a href="service.html" class="ud-main-btn">Our Services</a>
             </div>
           </div>
           <div class="ud-about-image">
@@ -112,6 +176,133 @@
       </div>
     </section>
     <!-- ====== About End ====== -->
+
+    <!-- ====== Our Mission Start ====== -->
+    <section class="ud-about-mission">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="ud-about-mission-content wow fadeInUp" data-wow-delay=".2s">
+              <h2>Our Mission</h2>
+              <p>
+                Our mission is to empower businesses with innovative digital solutions that enhance their online presence, streamline operations, and drive sustainable growth. We are committed to delivering high-quality services that exceed client expectations and create meaningful digital experiences.
+              </p>
+              <ul>
+                <li>Deliver exceptional digital solutions that solve real business challenges</li>
+                <li>Maintain the highest standards of quality and innovation</li>
+                <li>Build lasting relationships based on trust and transparency</li>
+                <li>Stay at the forefront of technology trends and best practices</li>
+                <li>Provide measurable results that contribute to our clients' success</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ud-about-mission-image wow fadeInUp" data-wow-delay=".3s">
+              <img src="assets/images/about/about-image.svg" alt="about-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Our Mission End ====== -->
+
+    <!-- ====== Our Values Start ====== -->
+    <section class="ud-about-values">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ud-section-title text-center mx-auto">
+              <span>Our Values</span>
+              <h2>The Principles That Guide Us</h2>
+              <p>
+                At Tech World Web, our core values shape everything we do and how we interact with our clients, partners, and team members.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".1s">
+              <div class="ud-value-icon">
+                <i class="lni lni-checkmark-circle"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Excellence</h3>
+                <p>
+                  We strive for excellence in everything we do, from the quality of our code to the design of our interfaces and the effectiveness of our marketing strategies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".15s">
+              <div class="ud-value-icon">
+                <i class="lni lni-users"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Client-Centric</h3>
+                <p>
+                  We put our clients at the center of everything we do, focusing on their needs, goals, and long-term success rather than just completing projects.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".2s">
+              <div class="ud-value-icon">
+                <i class="lni lni-bulb"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Innovation</h3>
+                <p>
+                  We embrace innovation and continuously explore new technologies, methodologies, and creative approaches to solve complex problems.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".25s">
+              <div class="ud-value-icon">
+                <i class="lni lni-handshake"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Integrity</h3>
+                <p>
+                  We operate with honesty, transparency, and ethical standards in all our business dealings and client relationships.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".3s">
+              <div class="ud-value-icon">
+                <i class="lni lni-rocket"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Adaptability</h3>
+                <p>
+                  We embrace change and remain flexible, adapting to evolving technologies, market trends, and client requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6">
+            <div class="ud-single-value wow fadeInUp" data-wow-delay=".35s">
+              <div class="ud-value-icon">
+                <i class="lni lni-grow"></i>
+              </div>
+              <div class="ud-value-content">
+                <h3>Continuous Growth</h3>
+                <p>
+                  We are committed to continuous learning and professional development, ensuring we stay at the forefront of our industry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Our Values End ====== -->
 
     <!-- ====== Team Start ====== -->
     <section id="team" class="ud-team">
@@ -507,19 +698,19 @@
           <div class="row">
             <div class="col-md-4">
               <p class="ud-footer-bottom-left">
-                © 2025 Your Tech World Web. All Rights Reserved
+                © 2024 Tech World Web. All Rights Reserved
               </p>
             </div>
             <div class="col-md-8">
               <ul class="ud-footer-bottom-left privacy-policy">
                 <li>
-                  <a href="javascript:void(0)">Privacy policy</a>
+                  <a href="javascript:void(0)">Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">Support policy</a>
+                  <a href="javascript:void(0)">Terms of Service</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">Terms of service</a>
+                  <a href="javascript:void(0)">Cookie Policy</a>
                 </li>
               </ul>
             </div>
@@ -540,5 +731,48 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/offcanvas-fix.js"></script>
+    <script>
+      // Handle offcanvas behavior with sticky navbar
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the offcanvas element
+        const offcanvasNavbar = document.getElementById('offcanvasNavbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // Add event listener for when offcanvas is shown
+        if (offcanvasNavbar) {
+          offcanvasNavbar.addEventListener('show.bs.offcanvas', function () {
+            document.body.classList.add('offcanvas-open');
+          });
+          
+          // Add event listener for when offcanvas is hidden
+          offcanvasNavbar.addEventListener('hide.bs.offcanvas', function () {
+            document.body.classList.remove('offcanvas-open');
+          });
+          
+          // Toggle active class on navbar toggler
+          navbarToggler.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        }
+        
+        // Fix for offcanvas position when navbar is sticky
+        const header = document.querySelector('.ud-header');
+        if (header) {
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.attributeName === 'class') {
+                const isSticky = header.classList.contains('sticky');
+                if (isSticky && offcanvasNavbar) {
+                  offcanvasNavbar.style.top = '0';
+                }
+              }
+            });
+          });
+          
+          observer.observe(header, { attributes: true });
+        }
+      });
+    </script>
   </body>
 </html>

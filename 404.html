@@ -20,6 +20,39 @@
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
 
+    <!-- Additional styles for offcanvas fix -->
+    <style>
+      /* Fix for offcanvas menu */
+      .offcanvas {
+        position: fixed !important;
+        top: 0 !important;
+        height: 100vh !important;
+        z-index: 9999 !important;
+      }
+      
+      /* Ensure offcanvas is always visible when shown */
+      .offcanvas.show {
+        visibility: visible !important;
+        transform: translateX(0) !important;
+      }
+      
+      /* Fix for sticky navbar and offcanvas interaction */
+      .ud-header.sticky ~ .offcanvas,
+      .ud-header.sticky + .offcanvas {
+        top: 0 !important;
+      }
+      
+      /* Ensure offcanvas backdrop covers the entire viewport */
+      .offcanvas-backdrop {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 9998 !important;
+      }
+    </style>
+
   </head>
   <body>
     <!-- ====== Header Start ====== -->
@@ -29,80 +62,72 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo">Startup Template</span>
+                <span class="fw-bold text-white startup-logo">TECH WORLD WEB</span>
               </a>
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
               </button>
 
-              <div class="navbar-collapse">
+              <!-- Offcanvas Menu -->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header single-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
+                  <button type="button" class="custom-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <i class="lni lni-close"></i>
+                  </button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="service.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  <div class="offcanvas-btn mt-4">
+                    <a class="ud-main-btn ud-login-btn" href="contact.html">
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Desktop Menu - Hidden on Mobile -->
+              <div class="desktop-menu d-none d-lg-flex align-items-center">
                 <ul id="nav" class="navbar-nav mx-auto">
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#home">Home</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#about">About</a>
+                    <a href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#pricing">Pricing</a>
+                    <a href="service.html">Services</a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#team">Team</a>
+                    <a href="blog.html">Blogs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#contact">Contact</a>
+                    <a href="about.html">About Us</a>
                   </li>
-                  <li class="nav-item nav-item-has-children">
-                    <a href="javascript:void(0)"> Pages </a>
-                    <ul class="ud-submenu">
-                      <li class="ud-submenu-item">
-                        <a href="about.html" class="ud-submenu-link">
-                          About Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="pricing.html" class="ud-submenu-link">
-                          Pricing Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="contact.html" class="ud-submenu-link">
-                          Contact Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="blog.html" class="ud-submenu-link">
-                          Blog Grid Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="blog-details.html" class="ud-submenu-link">
-                          Blog Details Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="login.html" class="ud-submenu-link">
-                          Sign In Page
-                        </a>
-                      </li>
-                      <li class="ud-submenu-item">
-                        <a href="404.html" class="ud-submenu-link">404 Page</a>
-                      </li>
-                    </ul>
-                  </li>
+                  <li class="nav-item">
+                    <a href="contact.html">Contact Us</a>
+                  </li>                   
                 </ul>
-              </div>
-
-              <div class="navbar-btn d-none d-sm-inline-block">
-                <a href="login.html" class="ud-main-btn ud-login-btn">
-                  Sign In
-                </a>
-                <a class="ud-main-btn ud-white-btn" href="javascript:void(0)">
-                  Sign Up
-                </a>
+                <div class="navbar-btn">
+                  <a class="ud-main-btn ud-white-btn" href="contact.html">
+                    Get In Touch
+                  </a>
+                </div>
               </div>
             </nav>
           </div>
@@ -396,5 +421,32 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/offcanvas-fix.js"></script>
+    
+    <script>
+      // Handle offcanvas behavior with sticky navbar
+      document.addEventListener('DOMContentLoaded', function() {
+        const offcanvas = document.querySelector('.offcanvas');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        // When offcanvas is shown
+        offcanvas.addEventListener('show.bs.offcanvas', function () {
+          document.body.classList.add('offcanvas-open');
+          navbarToggler.classList.add('active');
+          
+          // Fix offcanvas position when navbar is sticky
+          const header = document.querySelector('.ud-header');
+          if (header.classList.contains('sticky')) {
+            offcanvas.style.top = header.offsetHeight + 'px';
+          }
+        });
+        
+        // When offcanvas is hidden
+        offcanvas.addEventListener('hide.bs.offcanvas', function () {
+          document.body.classList.remove('offcanvas-open');
+          navbarToggler.classList.remove('active');
+        });
+      });
+    </script>
   </body>
 </html>
