@@ -255,12 +255,16 @@
 }
 
 .offcanvas-body {
-  padding: 20px;
+  /* padding: 20px; */
+  padding-top: 0px !important;
+  padding-left: 20px;
+  padding-right: 20px;  
+  padding-bottom: 20px;
   overflow-y: auto;
 }
 
 .offcanvas-body .navbar-nav {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .offcanvas-body .nav-item {
@@ -448,24 +452,22 @@ body.offcanvas-open {
   justify-content: space-between;
   padding: 15px 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--primary-color);
 }
 
 .offcanvas-header .offcanvas-title {
-  color: white;
+  color: var(--heading-color);
   font-weight: 700;
   font-size: 20px;
   margin: 0;
 }
 
-/* Adjust the custom close button for the colored header */
+/* Adjust the custom close button for the header */
 .offcanvas-header .custom-close-btn {
-  background-color: white;
-  color: var(--primary-color);
+  color: var(--heading-color);
 }
 
 .offcanvas-header .custom-close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--primary-color);
 }
 
 /* Fix for sticky navbar and offcanvas interaction */
@@ -547,26 +549,71 @@ body.offcanvas-open {
 
 /* Custom close button for offcanvas */
 .custom-close-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .custom-close-btn:hover {
-  background-color: #0e3fa9;
   transform: rotate(90deg);
 }
 
 .custom-close-btn i {
   font-size: 18px;
   line-height: 1;
+}
+
+
+
+/* Desktop Menu Spacing Improvements */
+.desktop-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make navbar use full width and space elements properly */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo styling */
+.navbar-brand {
+  margin-right: 0;
+  flex: 0 0 auto;
+}
+
+/* Center the navigation menu */
+.desktop-menu ul.navbar-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 40px;
+}
+
+/* Space between nav items */
+.desktop-menu .navbar-nav .nav-item {
+  margin: 0 10px;
+}
+
+/* Button container */
+.desktop-menu .navbar-btn {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .desktop-menu ul.navbar-nav {
+    margin: 0 20px;
+  }
+  
+  .desktop-menu .navbar-nav .nav-item {
+    margin: 0 5px;
+  }
 }

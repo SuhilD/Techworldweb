@@ -51,6 +51,20 @@
         height: 100vh !important;
         z-index: 9998 !important;
       }
+      
+      /* Remove offcanvas header background color */
+      .offcanvas-header.single-header {
+        background-color: transparent !important;
+      }
+      
+      /* Remove custom close button styles */
+      .custom-close-btn {
+        background-color: transparent !important;
+        border: none !important;
+        color: inherit !important;
+        font-size: inherit !important;
+        padding: 0 !important;
+      }
     </style>
 
   </head>
@@ -74,7 +88,7 @@
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header single-header">
                   <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TECH WORLD WEB</h5>
-                  <button type="button" class="custom-close-btn" style="display: flex;" data-bs-dismiss="offcanvas" aria-label="Close">
+                  <button type="button" class="custom-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                     <i class="lni lni-close"></i>
                   </button>
                 </div>
